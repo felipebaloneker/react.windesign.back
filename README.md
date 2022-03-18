@@ -34,5 +34,6 @@ yarn typeorm migrations:run
 ```
 
 ### inicie o servidor com:
+```
 yarn dev
-
+```
