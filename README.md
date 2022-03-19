@@ -1,4 +1,16 @@
 ## Para iniciar o projeto
+
+### Precisa ter instalado na maquina:
+- [NodeJs](https://nodejs.org/en/)
+- [Docker Desktop](https://www.docker.com/get-started/)
+- [VSCode](https://code.visualstudio.com)
+- [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
+
+Obs: para instalar o yarn abrar cmd como administrador e digite:
+
+```bash
+    npm install --global yarn
+```
 ### Clone o projeto com
 ```
 git clone git@github.com:felipebaloneker/windesign-back.git
