@@ -34,6 +34,7 @@ TYPEORM_DATABASE=postgres
 TYPEORM_PORT = 5432
 TYPEORM_MIGRATIONS = src/database/migrations/*.ts
 TYPEORM_MIGRATIONS_DIR = src/database/migrations
+TOKEN_KEY = 31bc6feb1f8a2372c181e270f6f3f51e
 ```
 
 ### Instale  as dependencias:
