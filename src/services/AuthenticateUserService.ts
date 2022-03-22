@@ -12,20 +12,23 @@ class AuthenticateUserService{
     async execute({email,password}:IAuthenticationRequest){
         const userRepository = getCustomRepository(UserRepository);
         const user = await userRepository.findOne({email});
-
+        // verificando se usuario existe
         if(!user){
             throw new Error("Your username or password are invalid");
         }
+        
+        // verificando se senha digitada corresponde
         const passwordMatch = await compare(password, user.password);
 
         if(!passwordMatch){
             throw new Error("Your username or password are invalid");
         }
-
+        // retornando dados do usuario
+        // expiração do token de 1 dia
         const token = sign({
             email:user.email
         },`${process.env.TOKEN_KEY}`,{
-            subjct:user.id,
+            subject:user.id,
             expiresIn:"1d",
         })
         return {token,user}
