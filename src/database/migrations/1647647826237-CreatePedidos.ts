@@ -21,7 +21,7 @@ export class CreatePedidos1647647826237 implements MigrationInterface {
                         type:'varchar'
                     },
                     {
-                        name:'setor',
+                        name:'categoria',
                         type:'varchar'
                     },
                     {
