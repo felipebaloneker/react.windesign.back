@@ -6,11 +6,11 @@ interface IUserRequest{
     name:string;
     email:string;
     password:string;
-    usertype:string;
+    type:string;
 }
 
 class CreateUserService{
-    async execute({name, email, password, usertype="usuario"}:IUserRequest){
+    async execute({name, email, password, type="usuario"}:IUserRequest){
         const usersRepository = getCustomRepository(UserRepository);
         if(!email){
             throw new Error('Email incorrect');
@@ -25,7 +25,7 @@ class CreateUserService{
             name,
             email,
             password:passwordHash,
-            usertype,
+            type,
         })
         await usersRepository.save(user)
         return user;

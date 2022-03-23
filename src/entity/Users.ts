@@ -16,7 +16,7 @@ class User{
     password:string;
 
     @Column()
-    usertype:string;
+    type:string;
 
     @CreateDateColumn()
     created_at:Date;
