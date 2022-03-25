@@ -36,7 +36,7 @@ export class CreateRequest1648227904577 implements MigrationInterface {
                 ],
                 foreignKeys:[
                     {
-                        name:"FKAuthorIdCompliments",
+                        name:"FKAuthorIdRequest",
                         referencedTableName:"users",
                         referencedColumnNames:["id"],
                         columnNames:["author_id"],
@@ -44,7 +44,7 @@ export class CreateRequest1648227904577 implements MigrationInterface {
                         onUpdate:"SET NULL"
                     },
                     {
-                        name:"FKCategoryIdCompliments",
+                        name:"FKCategoryIdRequest",
                         referencedTableName:"category",
                         referencedColumnNames:["id"],
                         columnNames:["category"],
