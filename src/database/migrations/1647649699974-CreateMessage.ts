@@ -17,7 +17,7 @@ export class CreateMessage1647649699974 implements MigrationInterface {
                         type:'uuid',
                     },
                     {
-                        name:'pedido_id',
+                        name:'chat_id',
                         type:'uuid',
                     },
                     {

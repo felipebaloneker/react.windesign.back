@@ -17,11 +17,11 @@ export class CreateRequest1648227904577 implements MigrationInterface {
                         type:'uuid'
                     },
                     {
-                        name:'detalhes',
+                        name:'details',
                         type:'varchar'
                     },
                     {
-                        name:'categoria',
+                        name:'category',
                         type:'varchar'
                     },
                     {
@@ -45,9 +45,9 @@ export class CreateRequest1648227904577 implements MigrationInterface {
                     },
                     {
                         name:"FKCategoryIdCompliments",
-                        referencedTableName:"categoria",
+                        referencedTableName:"category",
                         referencedColumnNames:["id"],
-                        columnNames:["categoria"],
+                        columnNames:["category"],
                         onDelete:"SET NULL",
                         onUpdate:"SET NULL"
                     },
