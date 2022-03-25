@@ -16,6 +16,16 @@ export class CreateChat1648228972751 implements MigrationInterface {
                         name:'request',
                         type:'uuid'
                     }
+                ],
+                foreignKeys:[
+                    {
+                        name:"FKRequestChat",
+                        referencedTableName:"request",
+                        referencedColumnNames:["id"],
+                        columnNames:["request"],
+                        onDelete:"SET NULL",
+                        onUpdate:"SET NULL"
+                    }
                 ]
             })
         )
