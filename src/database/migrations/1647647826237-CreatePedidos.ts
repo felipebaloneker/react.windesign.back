@@ -43,6 +43,14 @@ export class CreatePedidos1647647826237 implements MigrationInterface {
                         onDelete:"SET NULL",
                         onUpdate:"SET NULL"
                     },
+                    {
+                        name:"FKCategoryIdCompliments",
+                        referencedTableName:"categoria",
+                        referencedColumnNames:["id"],
+                        columnNames:["categoria"],
+                        onDelete:"SET NULL",
+                        onUpdate:"SET NULL"
+                    },
                 ]
             })
         )
