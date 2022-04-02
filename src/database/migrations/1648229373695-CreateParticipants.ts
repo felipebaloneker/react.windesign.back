@@ -30,6 +30,14 @@ export class CreateParticipants1648229373695 implements MigrationInterface {
                         columnNames:["chat_id"],
                         onDelete:'SET NULL',
                         onUpdate:'SET NULL',
+                    },
+                    {
+                        name:"FKUserId",
+                        referencedTableName:'user',
+                        referencedColumnNames:['id'],
+                        columnNames:["user_id"],
+                        onDelete:'SET NULL',
+                        onUpdate:'SET NULL',
                     }
                 ]
             })
