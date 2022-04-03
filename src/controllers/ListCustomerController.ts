@@ -1,4 +1,4 @@
-import {Request, Response} from 'express',
+import {Request, Response} from 'express'
 import {ListCustomerService} from '../services/ListCustomerService'
 
 class ListCustomerController{
@@ -11,3 +11,4 @@ class ListCustomerController{
         return response.json(customers);
     }
 }
+export { ListCustomerController };
