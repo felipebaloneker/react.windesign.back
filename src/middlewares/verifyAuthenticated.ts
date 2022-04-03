@@ -28,4 +28,7 @@ export function verifyAuthenticated(
         request.user_id = sub;
         return next();
     }
+    catch(err){
+        return response.status(401).end();
+    }
 }
