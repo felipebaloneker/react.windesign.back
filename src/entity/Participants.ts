@@ -1,7 +1,7 @@
 import { Entity, PrimaryColumn, Column, JoinColumn, ManyToMany } from "typeorm";
 import {v4 as uuid} from 'uuid';
 import {Chat} from './Chat';
-import { User } from "./Users";
+import { User } from "./User";
 
 @Entity("Participants")
 class Participants{

@@ -1,7 +1,7 @@
 import { Entity, PrimaryColumn, Column, CreateDateColumn, JoinColumn, ManyToOne } from "typeorm";
 import {v4 as uuid} from 'uuid';
 import {Category} from './Category';
-import {User} from './Users';
+import {User} from './User';
 
 @Entity("Request")
 class Request{

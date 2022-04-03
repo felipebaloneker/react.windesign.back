@@ -7,7 +7,7 @@ interface IVerify{
 
 export function verifyAuthenticated(
     request:Request,
-    Response:Response,
+    response:Response,
     next:NextFunction
 ){
     // Recebendo token
