@@ -1,4 +1,3 @@
-import { table } from "console";
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
 export class CreateCategory1648228066094 implements MigrationInterface {
