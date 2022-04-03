@@ -23,7 +23,7 @@ export class CreateParticipants1648951051548 implements MigrationInterface {
                     foreignKeys:[
                         {
                             name:"FKUserId",
-                            referencedTableName:'user',
+                            referencedTableName:'users',
                             referencedColumnNames:['id'],
                             columnNames:["user_id"],
                             onDelete:'SET NULL',

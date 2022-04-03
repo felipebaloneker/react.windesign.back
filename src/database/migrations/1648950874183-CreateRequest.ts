@@ -21,7 +21,7 @@ export class CreateRequest1648950874183 implements MigrationInterface {
                     },
                     {
                         name:'category_id',
-                        type:'varchar'
+                        type:'uuid'
                     },
                     {
                         name:'status',
