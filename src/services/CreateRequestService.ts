@@ -21,7 +21,8 @@ class CreateRequestService{
             category_id,
             status
         })
-        await requestRepository.save(request)
+        await requestRepository.save(request);
+        return request;
     }
 }
 export {CreateRequestService}
