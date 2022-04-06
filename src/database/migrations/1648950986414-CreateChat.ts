@@ -12,7 +12,7 @@ export class CreateChat1648950986414 implements MigrationInterface {
                             isPrimary:true
                         },
                         {
-                            name:'request',
+                            name:'order',
                             type:'uuid'
                         }
                     ],

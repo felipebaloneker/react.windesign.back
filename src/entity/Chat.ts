@@ -1,6 +1,6 @@
-import {Entity, PrimaryColumn, Column, CreateDateColumn, JoinColumn, ManyToOne} from 'typeorm';
+import {Entity, PrimaryColumn, Column, JoinColumn, ManyToOne} from 'typeorm';
 import {v4 as uuid} from 'uuid';
-import { Request } from './Request';
+import { Order } from './Order';
 
 @Entity('Chat')
 class Chat{
@@ -8,11 +8,11 @@ class Chat{
     readonly id: string;
 
     @Column()
-    request:string;
+    order:string;
 
-    @JoinColumn({name:'request'})
-    @ManyToOne(()=>Request)
-    requestId : Request
+    @JoinColumn({name:'order'})
+    @ManyToOne(()=>Order)
+    orderId : Order
 
     constructor(){
         if(!this.id){

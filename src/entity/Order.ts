@@ -3,8 +3,8 @@ import {v4 as uuid} from 'uuid';
 import {Category} from './Category';
 import {User} from './User';
 
-@Entity("Request")
-class Request{
+@Entity("Order")
+class Order{
     @PrimaryColumn()
     readonly id: string;
 
@@ -38,4 +38,4 @@ class Request{
     }
 }
 
-export {Request}
+export {Order}
