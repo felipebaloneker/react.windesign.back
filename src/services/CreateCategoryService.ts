@@ -1,8 +1,10 @@
 import { getCustomRepository } from "typeorm";
 import { CategoryRepository } from "../repository/CategoryRepository";
-
+interface ICategoryType{
+    name:string;
+}
 class CreateCategoryService{
-    async execute(name:string){
+    async execute({name}:ICategoryType){
         const categoryRequest = getCustomRepository(CategoryRepository);
         const category = categoryRequest.create({
             name

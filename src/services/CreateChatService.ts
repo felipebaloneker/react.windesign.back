@@ -1,14 +1,16 @@
 import { getCustomRepository } from "typeorm";
 import { ChatRepository } from "../repository/ChatRepository";
-
+interface IChatType{
+    order:string;
+}
 class CreateChatService{
-    async execute(request:string){
+    async execute({order}:IChatType){
         const chatRepository = getCustomRepository(ChatRepository)
-        if(!request){
+        if(!order){
             throw new Error("Empty Field")
         }
         const chat = chatRepository.create({
-            request,
+            request:order,
         })
         await chatRepository.save(chat);
         return chat;
