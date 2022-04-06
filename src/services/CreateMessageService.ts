@@ -2,20 +2,20 @@ import { getCustomRepository } from "typeorm";
 import {MessageRepository} from '../repository/MessageRepository'
 
 interface IRequestType{
-    author_id:string;
+    user_id:string;
     chat_id:string;
     body:string;
 }
 
-class CreateMessageRepository{
-    async execute({author_id, chat_id, body}:IRequestType){
+class CreateMessageService{
+    async execute({user_id, chat_id, body}:IRequestType){
         const messageRepository = getCustomRepository(MessageRepository)
 
-        if(!author_id && !chat_id){
+        if(!user_id && !chat_id){
             throw new Error("Empty Field")
         }
         const message = messageRepository.create({
-            author_id,
+            author_id:user_id,
             chat_id,
             body,
         })
@@ -23,4 +23,4 @@ class CreateMessageRepository{
         return message;
     }
 }
-export {CreateMessageRepository}
+export {CreateMessageService}
