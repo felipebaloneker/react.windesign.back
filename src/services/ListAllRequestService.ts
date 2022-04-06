@@ -5,7 +5,7 @@ interface IRequestType{
     date:string
 }
 
-class ListCustomerRequestService {
+class ListAllRequestService {
     async execute({date}:IRequestType){
         const requestRepository = getCustomRepository(RequestRepository)
         const request = await requestRepository.find({
@@ -16,4 +16,4 @@ class ListCustomerRequestService {
         return request;
     }
 }
-export {ListCustomerRequestService}
+export {ListAllRequestService}

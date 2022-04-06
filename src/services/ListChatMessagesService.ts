@@ -2,15 +2,15 @@ import { getCustomRepository } from "typeorm";
 import { MessageRepository } from "../repository/MessageRepository";
 
 interface IMessageType{
-    author_id:string;
+    chat_id:string;
 }
 
 class ListChatMessageService{
-    async execute({author_id}:IMessageType){
+    async execute({chat_id}:IMessageType){
         const messageRepository = getCustomRepository(MessageRepository)
         const message_list = messageRepository.find({
             where:{
-                author_id
+                chat_id
             }
         })
         return message_list;
