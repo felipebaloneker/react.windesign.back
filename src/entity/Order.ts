@@ -3,7 +3,7 @@ import {v4 as uuid} from 'uuid';
 import {Category} from './Category';
 import {User} from './User';
 
-@Entity("Order")
+@Entity("order")
 class Order{
     @PrimaryColumn()
     readonly id: string;

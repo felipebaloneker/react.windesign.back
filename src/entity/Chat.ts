@@ -2,7 +2,7 @@ import {Entity, PrimaryColumn, Column, JoinColumn, ManyToOne} from 'typeorm';
 import {v4 as uuid} from 'uuid';
 import { Order } from './Order';
 
-@Entity('Chat')
+@Entity('chat')
 class Chat{
     @PrimaryColumn()
     readonly id: string;

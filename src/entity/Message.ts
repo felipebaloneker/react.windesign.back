@@ -3,7 +3,7 @@ import {v4 as uuid} from 'uuid';
 import { Chat } from './Chat';
 import { User } from './User';
 
-@Entity('Message')
+@Entity('message')
 class Message{
     @PrimaryColumn()
     readonly id: string;
