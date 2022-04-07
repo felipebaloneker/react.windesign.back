@@ -5,11 +5,11 @@ interface ICategoryType{
 }
 class CreateCategoryService{
     async execute({name}:ICategoryType){
-        const categoryRequest = getCustomRepository(CategoryRepository);
-        const category = categoryRequest.create({
+        const categoryRepository = getCustomRepository(CategoryRepository);
+        const category = categoryRepository.create({
             name
         })
-        await categoryRequest.save(category)
+        await categoryRepository.save(category)
         return category;
     }
 }
