@@ -32,7 +32,7 @@ const listEmployeeController = new ListEmployeeController();
 routes.post('/users/create', createUserController.handle);
 routes.post('/users/login', authenticateUserController.handle);
 
-routes.post('/users/create/request', verifyAuthenticated,createOrderController.handle);
+routes.post('/users/create/order', verifyAuthenticated,createOrderController.handle);
 routes.post('/category/create',verifyAuthenticated,ensureManager,createCategoryController.handle);
 routes.post('/chat/create',verifyAuthenticated,createChatController.handle);
 routes.post('/chat/create/user', verifyAuthenticated,addParticipantController.handle);
