@@ -10,7 +10,7 @@ class CreateChatService{
             throw new Error("Empty Field")
         }
         const chat = chatRepository.create({
-            request:order,
+            order,
         })
         await chatRepository.save(chat);
         return chat;
