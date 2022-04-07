@@ -19,9 +19,9 @@ export class CreateChat1648950986414 implements MigrationInterface {
                     foreignKeys:[
                         {
                             name:"FKRequestChat",
-                            referencedTableName:"request",
+                            referencedTableName:"order",
                             referencedColumnNames:["id"],
-                            columnNames:["request"],
+                            columnNames:["order"],
                             onDelete:"SET NULL",
                             onUpdate:"SET NULL"
                         }
