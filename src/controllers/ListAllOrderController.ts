@@ -1,7 +1,7 @@
 import {Request, Response} from 'express'
 import { ListAllOrderService } from '../services/ListAllOrderService'
 
-class ListAllRequestController{
+class ListAllOrderController{
     async handle(request:Request, response:Response){
         const toParsed = request.query.date;
         const date = toParsed.toString()
@@ -11,4 +11,4 @@ class ListAllRequestController{
         return response.json(orderList)
     }
 }
-export {ListAllRequestController}
+export {ListAllOrderController}

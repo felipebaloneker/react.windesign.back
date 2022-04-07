@@ -1,7 +1,7 @@
 import {Request,Response} from 'express'
 import { CreateOrderService } from '../services/CreateOrderService'
 
-class CreateRequestController{
+class CreateOrderController{
     async handle(request:Request, response:Response){
         const {user_id} = request
         const {details, category_id, status} = request.body
@@ -12,4 +12,4 @@ class CreateRequestController{
         return response.json(order)
     }
 }
-export {CreateRequestController}
+export {CreateOrderController}
