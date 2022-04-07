@@ -41,7 +41,7 @@ routes.post('/chat/message',verifyAuthenticated,createMessageController.handle);
 routes.get('/users/list/customer', verifyAuthenticated,ensureManager,listCustomerController.handle);
 routes.get('/users/list/employee', verifyAuthenticated,ensureManager,listEmployeeController.handle);
 routes.get('/users/list/order', verifyAuthenticated,listCustomerOrderController.handle);
-routes.get('/users/list/order/all', verifyAuthenticated,listAllOrderController.handle);
-routes.get('chat/list/message',verifyAuthenticated,listChatMessageController.handle);
+routes.get('/users/list/order/all', verifyAuthenticated,ensureManager,listAllOrderController.handle);
+routes.get('/chat/list/message',verifyAuthenticated,listChatMessageController.handle);
 
 export {routes}
