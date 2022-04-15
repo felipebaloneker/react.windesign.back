@@ -9,9 +9,6 @@ class ListAllOrderService {
     async execute({date}:IOrderType){
         const orderRepository = getCustomRepository(OrderRepository)
         const order = await orderRepository.find({
-            where:{
-                created_at:date
-            }
         })
         return order;
     }

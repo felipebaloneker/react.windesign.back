@@ -13,6 +13,7 @@ import { ListAllOrderController } from './controllers/ListAllOrderController';
 import { ListChatMessageController } from './controllers/ListChatMessageController';
 import { ListCustomerOrderController } from './controllers/ListCustomerOrderController';
 import { CreateOrderController } from './controllers/CreateOrderController';
+import { ListCategoryController } from './controllers/ListCategoryController';
 const routes = Router();
 
 const addParticipantController  = new AddParticipantController();
@@ -27,7 +28,7 @@ const listChatMessageController = new ListChatMessageController();
 const listCustomerOrderController = new ListCustomerOrderController();
 const listCustomerController = new ListCustomerController();
 const listEmployeeController = new ListEmployeeController();
-
+const listCategoryController = new ListCategoryController();
 
 routes.post('/users/create', createUserController.handle);
 routes.post('/users/login', authenticateUserController.handle);
@@ -42,6 +43,7 @@ routes.get('/users/list/customer', verifyAuthenticated,ensureManager,listCustome
 routes.get('/users/list/employee', verifyAuthenticated,ensureManager,listEmployeeController.handle);
 routes.get('/users/list/order', verifyAuthenticated,listCustomerOrderController.handle);
 routes.get('/users/list/order/all', verifyAuthenticated,ensureManager,listAllOrderController.handle);
+routes.get('/users/list/category', verifyAuthenticated,listCategoryController.handle)
 routes.get('/chat/list/message',verifyAuthenticated,listChatMessageController.handle);
 
 export {routes}
