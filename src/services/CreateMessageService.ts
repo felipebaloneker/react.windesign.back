@@ -5,10 +5,11 @@ interface IRequestType{
     user_id:string;
     chat_id:string;
     body:string;
+    type:string;
 }
 
 class CreateMessageService{
-    async execute({user_id, chat_id, body}:IRequestType){
+    async execute({user_id, chat_id, body,type='text'}:IRequestType){
         const messageRepository = getCustomRepository(MessageRepository)
 
         if(!user_id && !chat_id){
@@ -18,6 +19,7 @@ class CreateMessageService{
             author_id:user_id,
             chat_id,
             body,
+            type
         })
         await messageRepository.save(message);
         return message;

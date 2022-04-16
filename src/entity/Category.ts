@@ -7,6 +7,8 @@ class Category{
     readonly id: string;
     @Column()
     name:string;
+    @Column()
+    details:string;
     @CreateDateColumn()
     created_at:Date;
 

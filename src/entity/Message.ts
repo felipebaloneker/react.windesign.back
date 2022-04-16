@@ -24,6 +24,9 @@ class Message{
 
     @Column()
     body: string;
+    
+    @Column()
+    type:string;
 
     @CreateDateColumn()
     created_at: Date;
