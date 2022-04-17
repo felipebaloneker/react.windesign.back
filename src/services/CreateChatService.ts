@@ -14,13 +14,16 @@ class CreateChatService{
                 order,
             }
         })
-        const chat = chatRepository.create({
-            order,
-        })
-        if(!chatExists){
-            await chatRepository.save(chat);
+        if(chatExists){
+            return chatExists
         }
-        return chat;
+        if(!chatExists){
+            const chat = chatRepository.create({
+                order,
+            })
+            await chatRepository.save(chat);
+            return chat;
+        }
     }
 }
 export {CreateChatService}
