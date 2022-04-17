@@ -7,12 +7,19 @@ class CreateChatService{
     async execute({order}:IChatType){
         const chatRepository = getCustomRepository(ChatRepository)
         if(!order){
-            throw new Error("Empty Field")
+            return("Empty Field")
         }
+        const chatExists = await chatRepository.findOne({
+            where:{
+                order,
+            }
+        })
         const chat = chatRepository.create({
             order,
         })
-        await chatRepository.save(chat);
+        if(!chatExists){
+            await chatRepository.save(chat);
+        }
         return chat;
     }
 }
