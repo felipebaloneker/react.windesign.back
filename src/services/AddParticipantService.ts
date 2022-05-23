@@ -8,12 +8,23 @@ interface IPartType {
 class AddParticipantService{
     async execute({user_id,chat_id}:IPartType){
         const participantsRepository = getCustomRepository(ParticipantsRepository);
-        const participants  = participantsRepository.create({
-            user_id,
-            chat_id,
+        const participantExits = await participantsRepository.findOne({
+            where:{
+                user_id,
+                chat_id
+            }
         })
-        await participantsRepository.save(participants)
-        return participants;
+        if(participantExits){
+            return participantExits
+        }
+        if(!participantExits){
+            const participants  = participantsRepository.create({
+                user_id,
+                chat_id,
+            })
+            await participantsRepository.save(participants)
+            return participants;
+        }
     }
 }
 
