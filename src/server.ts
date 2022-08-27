@@ -1,31 +1,35 @@
-import 'reflect-metadata';
-import express, {Request,Response, NextFunction} from 'express';
-import dotenv from 'dotenv';
-import { routes } from './routes';
-import cors from 'cors';
+import "reflect-metadata";
+import express, { Request, Response, NextFunction } from "express";
+import dotenv from "dotenv";
+import { routes } from "./routes";
+import cors from "cors";
 
 const app = express();
-const PORT = process.env.PORT|| 3000;
+const PORT = process.env.PORT || 3000;
 
-import './database';
+import "./database";
 
 dotenv.config();
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 // tratando errors
-app.use((err:Error, request:Request, response:Response, next: NextFunction)=>{
-    if(err instanceof Error){
-        return response.status(400).json({
-            error:err.message
-        })
+app.use(
+  (err: Error, request: Request, response: Response, next: NextFunction) => {
+    if (err instanceof Error) {
+      return response.status(400).json({
+        error: err.message,
+      });
     }
     return response.status(500).json({
-        status:'error',
-        message:'Internal Server Error'
-    }) 
-})
+      status: "error",
+      message: "Internal Server Error",
+    });
+  }
+);
 
-app.listen(PORT,()=>{console.log('Server is running')});
+app.listen(PORT, () => {
+  console.log("Server is running");
+});
