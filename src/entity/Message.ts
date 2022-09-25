@@ -21,6 +21,8 @@ class Message{
     @JoinColumn({name:"chat_id"})
     @ManyToMany(()=> Chat)
     chatId: Chat;
+    @Column()
+    author_name: string;
 
     @Column()
     body: string;

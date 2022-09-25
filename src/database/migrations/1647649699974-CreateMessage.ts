@@ -17,6 +17,10 @@ export class CreateMessage1647649699974 implements MigrationInterface {
                         type:'uuid',
                     },
                     {
+                        name:'author_name',
+                        type:'varchar'
+                    },
+                    {
                         name:'chat_id',
                         type:'uuid',
                     },
@@ -39,6 +43,7 @@ export class CreateMessage1647649699974 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable('message');
     }
 
 }

@@ -14,6 +14,8 @@ import { ListChatMessageController } from './controllers/ListChatMessageControll
 import { ListCustomerOrderController } from './controllers/ListCustomerOrderController';
 import { CreateOrderController } from './controllers/CreateOrderController';
 import { ListCategoryController } from './controllers/ListCategoryController';
+import { ListOrderByIdController } from './controllers/ListOrderByIdController';
+import { UpdateOrderByIdController } from './controllers/UpdateOrderByIdController';
 const routes = Router();
 
 const addParticipantController  = new AddParticipantController();
@@ -29,6 +31,8 @@ const listCustomerOrderController = new ListCustomerOrderController();
 const listCustomerController = new ListCustomerController();
 const listEmployeeController = new ListEmployeeController();
 const listCategoryController = new ListCategoryController();
+const listOrderByIdController = new ListOrderByIdController();
+const updateOrderByIdController = new UpdateOrderByIdController();
 
 routes.post('/users/create', createUserController.handle);
 routes.post('/users/login', authenticateUserController.handle);
@@ -38,12 +42,15 @@ routes.post('/category/create',verifyAuthenticated,ensureManager,createCategoryC
 routes.post('/chat/create',verifyAuthenticated,createChatController.handle);
 routes.post('/chat/create/user', verifyAuthenticated,addParticipantController.handle);
 routes.post('/chat/message',verifyAuthenticated,createMessageController.handle);
+routes.post('/order/update', verifyAuthenticated, updateOrderByIdController.handle);
 
 routes.get('/users/list/customer', verifyAuthenticated,ensureManager,listCustomerController.handle);
 routes.get('/users/list/employee', verifyAuthenticated,ensureManager,listEmployeeController.handle);
 routes.get('/users/list/order', verifyAuthenticated,listCustomerOrderController.handle);
-routes.get('/users/list/order/all', verifyAuthenticated,ensureManager,listAllOrderController.handle);
+routes.get('/users/list/order/all', verifyAuthenticated,listAllOrderController.handle);
 routes.get('/users/list/category', verifyAuthenticated,listCategoryController.handle)
 routes.get('/chat/list/message',verifyAuthenticated,listChatMessageController.handle);
+routes.get('/order/list', verifyAuthenticated, listOrderByIdController.handle);
+
 
 export {routes}

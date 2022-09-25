@@ -7,6 +7,7 @@
 - [VSCode](https://code.visualstudio.com)
 - [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
 - [Vscode](https://code.visualstudio.com/)
+- [BeekeeperStudio](https://www.beekeeperstudio.io/)
 
 Obs: para instalar o yarn abrar o terminal do vscode como administrador e digite:
 
@@ -25,6 +26,8 @@ git clone git@github.com:felipebaloneker/windesign-back.git
 ```bash
 sh firstExecute.sh
 ```
+
+Obs: Você pode utilizar o BeekeeperStudio para gerenciar o banco de dados do Docker, vizualizar tabelas e linhas.
 
 ### inicie o servidor com:
 

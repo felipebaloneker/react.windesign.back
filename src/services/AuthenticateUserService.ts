@@ -14,14 +14,14 @@ class AuthenticateUserService{
         const user = await userRepository.findOne({email});
         // verificando se usuario existe
         if(!user){
-            throw new Error("Your username or password are invalid");
+            return "Your username or password are invalid";
         }
         
         // verificando se senha digitada corresponde
         const passwordMatch = await compare(password, user.password);
 
         if(!passwordMatch){
-            throw new Error("Your username or password are invalid");
+            return "Your username or password are invalid";
         }
         // retornando dados do usuario
         // expiração do token de 1 dia

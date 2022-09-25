@@ -13,11 +13,11 @@ class CreateUserService{
     async execute({name, email, password, type="usuario"}:IUserRequest){
         const usersRepository = getCustomRepository(UserRepository);
         if(!email){
-            throw new Error('Email incorrect');
+            return 'Email incorrect';
         }
         const userAlreadyExists = await usersRepository.findOne({email})
         if(userAlreadyExists){
-            throw new Error('User alreary exists')
+            return 'User alreary exists';
         }
         const passwordHash = await hash(password, 8)
 

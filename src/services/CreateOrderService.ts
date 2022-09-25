@@ -12,7 +12,7 @@ class CreateOrderService{
     async execute({user_id, details, category_id, status='em progresso'}:IOrderType){
         const orderRepository = getCustomRepository(OrderRepository);
         if(!user_id && !details){
-            throw new Error('Empty Field')
+          return'Empty Field';
         }
         const order = orderRepository.create({
             author_id:user_id,

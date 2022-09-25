@@ -10,6 +10,9 @@ class AuthenticateUserController{
             email,
             password
         })
+        if(token == 'Your username or password are invalid'){
+            return response.status(404).json(token);
+        }
         return response.json(token);
     }
 }
