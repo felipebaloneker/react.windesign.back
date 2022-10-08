@@ -1,30 +1,48 @@
-import { Column, Entity, PrimaryColumn, CreateDateColumn} from "typeorm";
-import {v4 as uuid} from 'uuid'
+import { Column, Entity, PrimaryColumn, CreateDateColumn } from "typeorm";
+import { v4 as uuid } from "uuid";
 
 @Entity("users")
-class User{
-    @PrimaryColumn()
-    readonly id:string;
+class User {
+  @PrimaryColumn()
+  readonly id: string;
 
-    @Column()
-    name:string;
-    
-    @Column()
-    email:string;
+  @Column()
+  name: string;
 
-    @Column()
-    password:string;
+  @Column()
+  email: string;
 
-    @Column()
-    type:string;
+  @Column()
+  password: string;
 
-    @CreateDateColumn()
-    created_at:Date;
+  @Column()
+  type: string;
 
-    constructor(){
-        if(!this.id){
-            this.id = uuid();
-        }
+  @Column()
+  phone: string;
+
+  @Column()
+  cpf: string;
+
+  @Column()
+  cnpj: string;
+
+  @Column()
+  juridico: string;
+
+  @Column()
+  birthday: string;
+
+  @Column()
+  address: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  constructor() {
+    if (!this.id) {
+      this.id = uuid();
     }
+  }
 }
-export {User}
+export { User };
