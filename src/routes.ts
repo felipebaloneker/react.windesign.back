@@ -16,6 +16,8 @@ import { CreateOrderController } from "./controllers/CreateOrderController";
 import { ListCategoryController } from "./controllers/ListCategoryController";
 import { ListOrderByIdController } from "./controllers/ListOrderByIdController";
 import { UpdateOrderByIdController } from "./controllers/UpdateOrderByIdController";
+import { SendPasswordController } from "./controllers/SendPasswordController";
+import { UpdatePasswordController } from "./controllers/UpdatePasswordController";
 const routes = Router();
 
 const addParticipantController = new AddParticipantController();
@@ -33,9 +35,13 @@ const listEmployeeController = new ListEmployeeController();
 const listCategoryController = new ListCategoryController();
 const listOrderByIdController = new ListOrderByIdController();
 const updateOrderByIdController = new UpdateOrderByIdController();
+const updatePasswordController = new UpdatePasswordController();
+const sendPasswordController = new SendPasswordController();
 
 routes.post("/users/create", createUserController.handle);
 routes.post("/users/login", authenticateUserController.handle);
+routes.post("/users/send_password", sendPasswordController.handle);
+routes.post("/users/reset_password", updatePasswordController.handle);
 
 routes.post(
   "/users/create/order",
